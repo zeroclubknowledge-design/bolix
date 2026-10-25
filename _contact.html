@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>contact sheet</title>
+<style>
+  body{margin:0;font:12px system-ui;background:#222;color:#fff;display:grid;grid-template-columns:repeat(8,1fr);gap:4px;padding:4px}
+  figure{margin:0;position:relative}
+  img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#444}
+  figcaption{position:absolute;left:0;top:0;background:#000a;padding:1px 4px;font-weight:700}
+</style>
+<script>
+  const ids = ["1541643600914-78b084683601","1592945403244-b3fbafd7f539","1594035910387-fea47794261f","1523293182086-7651a899d37f","1587017539504-67cfbddac569","1588405748880-12d1d2a59f75","1615634260167-c8cdede054de","1610461888750-10bfc601b874","1563170351-be82bc888aa4","1595425970377-c9703cf48b6d","1590736969955-71cc94901144","1585386959984-a4155224a1ad","1608528577891-eb055944f2e7","1557170334-a9632e77c6e4","1547887538-e3a2f32cb1cc","1600612253971-422e7f7faeb6","1507676184212-d03ab07a01bf","1554907984-15263bfd63bd","1503095396549-807759245b35","1490750967868-88aa4486c946","1518895949257-7621c3c786d7","1619994403073-2cec844b8e63","1528740561666-dc2479dc08ab","1616949755610-8c9bbc08f138","1622618991746-fe6004db3a47","1514306191717-452ec28c7814","1580809361436-42a7ec204889","1564399579883-451a5d44ec08","1577083552431-6e5fd01988ec","1496062031456-07b8f162a322","1455659817273-f96807779a8a","1512777576244-b846ac3d816f","1599305445671-ac291c95aaa9","1613521140785-e85e427f8002","1605651202774-7d573fd3f12d","1617897903246-719242758050","1611930022073-b7a4ba5fcccd","1620916566398-39f1143ab7be"];
+  document.addEventListener("DOMContentLoaded", () => {
+    ids.forEach((id, i) => {
+      const f = document.createElement("figure");
+      f.innerHTML = `<img src="https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=300&q=60" data-id="${id}"><figcaption>${i}</figcaption>`;
+      document.body.append(f);
+    });
+  });
+</script>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" data-currency="₦">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bolix Perfumery — Maison de Haute Parfumerie</title>
+  <meta name="description" content="Bolix Perfumery — Discover luxury extraits de parfum, niche elixirs, and bespoke scents curated from the finest master perfumers." />
+  <link rel="icon" type="image/png" href="assets/img/bolix-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+</head>
+<body>
+  <!-- Icon sprite -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.6 11.2 12 4l8.4 7.2" /><path d="M5.9 9.4v10.1h12.2V9.4" /><path d="M10.1 19.5v-5.3h3.8v5.3" /></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.4" cy="10.4" r="7" /><path d="m15.6 15.6 5.4 5.4" /></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M8.6 17.6V6.2L20 3.6v11.6M8.6 9.4 20 6.8" stroke-width="1.9" /><ellipse cx="5.8" cy="17.7" rx="3" ry="2.4" fill="currentColor" stroke="none" /><ellipse cx="17.2" cy="15.2" rx="3" ry="2.4" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.4c3.4 4.2 5.6 7.2 5.6 10.2a5.6 5.6 0 0 1-11.2 0c0-3 2.2-6 5.6-10.2Z" /></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6.5 9.5 5.5 5.5 5.5-5.5" /></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.2s-7.8-4.7-7.8-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.8 2.6c0 5.7-7.8 10.4-7.8 10.4Z" /></symbol>
+    <symbol id="i-plus-square" viewBox="0 0 24 24"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5" /><path d="M12 8v8M8 12h8" /></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.8 6.4h16.4M3.8 12h16.4M3.8 17.6h16.4" /></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.4" y="8.4" width="17.2" height="4.2" rx="1" /><path d="M5 12.6v7.9h14v-7.9M12 8.4v12.1" /><path d="M12 8.4S10.7 4 8.2 4.3c-1.9.3-1.5 4.1 3.8 4.1ZM12 8.4s1.3-4.4 3.8-4.1c1.9.3 1.5 4.1-3.8 4.1Z" /></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8.2h14l-1 12.3H6L5 8.2Z" /><path d="M9 10.4V6.8a3 3 0 0 1 6 0v3.6" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19.5v-15M6 10.5l6-6 6 6" /></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6" /></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19.5 12h-15M10.5 6l-6 6 6 6" /></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4.6 12a7.4 7.4 0 1 0 2.2-5.3" /><path d="M4.4 3.8v4.6H9" /></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 14.5V3.8M7.6 8.2 12 3.8l4.4 4.4" /><path d="M5 12.6v7.9h14v-7.9" /></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12" /></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" /></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8L12 3.6Z" fill="currentColor" stroke="none" /></symbol>
+  </svg>
+
+  <div class="canvas">
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="top">
+      <a class="nav__brand" href="#maison" aria-label="Bolix Perfume — Home">
+        <img class="nav__logo-img" src="assets/img/bolix-logo.png" alt="Bolix Perfume" />
+      </a>
+      <nav class="nav__links" id="primary-nav" aria-label="Primary">
+        <a class="nav__link is-active" href="#maison"><strong>Maison</strong><span>Boutique</span></a>
+        <a class="nav__link" href="#collections"><strong>Collections</strong><span>Niche &amp; Extraits</span></a>
+        <a class="nav__link" href="#atelier"><strong>Atelier</strong><span>Bespoke Scents</span></a>
+        <a class="nav__link" href="#journal"><strong>Journal</strong><span>Scent Stories</span></a>
+        <a class="nav__link" href="shop.html"><strong>Shop</strong><span>All fragrances</span></a>
+        <a class="nav__link" href="account.html"><strong>Account</strong><span>Orders &amp; profile</span></a>
+      </nav>
+      <button class="nav__search" type="button" data-open-search aria-label="Search fragrances">
+        <svg class="ic"><use href="#i-search" /></svg>
+      </button>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg class="ic"><use href="#i-menu" /></svg>
+      </button>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero reveal" id="maison" aria-labelledby="maison-title">
+        <div class="hero__media">
+          <img class="hero__img" src="assets/img/hero.jpg" alt="A bottle of artisanal extrait de parfum beneath gilded arches" fetchpriority="high" />
+
+          <div class="hero__inset">
+            <img src="assets/img/hero-inset.jpg" alt="Golden atomized mist from a crystal flacon" />
+            <a class="hero__note" href="#notes" aria-label="Explore signature olfactory notes">
+              <svg class="ic"><use href="#i-note" /></svg>
+            </a>
+          </div>
+
+          <a class="hero__pill" href="#featured">
+            <img src="assets/img/blue-talisman.jpg" alt="Ex Nihilo Blue Talisman" />
+            <span><strong>Blue Talisman</strong><small>Extrait de Parfum · QUINTESSENCE</small></span>
+          </a>
+        </div>
+
+        <div class="hero__foot">
+          <ul class="circles" aria-label="Signature ingredients">
+            <li><a href="#notes" data-tip="Bulgarian Rose"><img src="assets/img/ing-rose.jpg" alt="Bulgarian rose petals" loading="lazy" /></a></li>
+            <li><a href="#notes" data-tip="Kashmiri Saffron"><img src="assets/img/ing-saffron.jpg" alt="Saffron threads" loading="lazy" /></a></li>
+            <li><a href="#notes" data-tip="Aged Oud Wood"><img src="assets/img/ing-oud.jpg" alt="Aged oud wood" loading="lazy" /></a></li>
+          </ul>
+          <div class="hero__story">
+            <img class="hero__logo-img" src="assets/img/bolix-logo.png" alt="Bolix Perfume" />
+            <h1 id="maison-title" class="visually-hidden">Bolix Perfume</h1>
+            <p>Bolix Perfume curates the world’s most coveted niche extraits and bespoke elixirs, born where timeless Parisian artistry meets modern olfactory mastery. Every bottle in our vault is selected for its breathtaking complexity, intoxicating sillage, and unforgettable presence.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FEATURED ============ -->
+      <section class="feature reveal" id="featured" aria-labelledby="featured-title">
+        <figure class="frame frame--beige feature__photo">
+          <img src="assets/img/feature.jpg" alt="Ex Nihilo Blue Talisman Extrait de Parfum on royal velvet" loading="lazy" />
+        </figure>
+
+        <div class="feature__card">
+          <div class="panel">
+            <h2 class="panel__title" id="featured-title">Ex Nihilo Blue Talisman</h2>
+            <p class="panel__meta"><b>1.4K</b> reviews <span class="panel__stars" aria-label="Rated 4.9 out of 5"><svg class="ic ic--fill"><use href="#i-star" /></svg>4.9</span></p>
+
+            <div class="panel__bar">
+              <div class="size">
+                <button class="size__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose bottle size">
+                  <svg class="ic"><use href="#i-drop" /></svg>
+                  <span data-size-label>100 ml</span>
+                  <svg class="ic ic--sm"><use href="#i-chevron" /></svg>
+                </button>
+                <span class="size__dot" aria-hidden="true"></span>
+                <ul class="size__menu" role="listbox" aria-label="Bottle size" hidden>
+                  <li role="option" data-size="50 ml" data-price="540000" aria-selected="false">50 ml <span>₦540,000</span></li>
+                  <li role="option" data-size="100 ml" data-price="858999" aria-selected="true">100 ml <span>₦858,999</span></li>
+                </ul>
+              </div>
+              <div class="panel__icons">
+                <button class="icon-btn" type="button" data-wish aria-pressed="false" aria-label="Save to wishlist"><svg class="ic"><use href="#i-heart" /></svg></button>
+                <button class="icon-btn icon-btn--badge" type="button" data-open-bag aria-label="Open your bag"><svg class="ic"><use href="#i-plus-square" /></svg><span class="badge" data-bag-count hidden>0</span></button>
+                <a class="icon-btn" href="#notes" aria-label="Scent details"><svg class="ic"><use href="#i-menu" /></svg></a>
+              </div>
+            </div>
+
+            <p class="panel__label">Extrait de Parfum · <span data-feature-price>₦858,999</span></p>
+            <ul class="panel__stats">
+              <li><b>18</b><span>notes</span></li>
+              <li><b>16h</b><span>longevity</span></li>
+              <li><b>12</b><span>bottles left</span></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <button class="btn-light" type="button" data-add="blue-talisman" data-size="100 ml" data-price="858999">Add to bag</button>
+            <button class="btn-light" type="button" data-share>Share scent</button>
+            <button class="btn-light btn-light--icon" type="button" data-gift aria-pressed="false" aria-label="Add gift wrapping"><svg class="ic"><use href="#i-gift" /></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COMMUNITY + NOIR + GALLERY + NOTES ============ -->
+      <section class="social" aria-label="The Bolix community">
+        <div class="social__left">
+          <div class="profile reveal" id="community">
+            <a class="profile__avatar" href="#collections" aria-label="Browse the collection">
+              <img src="assets/img/avatar.jpg" alt="Master Perfumer" loading="lazy" />
+            </a>
+            <p class="profile__handle">@bolixperfumery</p>
+            <ul class="profile__stats">
+              <li><b>48</b><span>Fragrances</span></li>
+              <li><b>18.5K</b><span>Followers</span></li>
+              <li><b>1,840</b><span>Reviews</span></li>
+            </ul>
+          </div>
+
+          <div class="gallery reveal">
+            <div class="mini-nav">
+              <a class="mini-nav__home" href="#maison" aria-label="Back to top"><svg class="ic"><use href="#i-home" /></svg></a>
+              <span class="mini-nav__title">The Prestige Gallery</span>
+              <button class="mini-nav__search" type="button" data-open-search aria-label="Search fragrances"><svg class="ic"><use href="#i-search" /></svg></button>
+            </div>
+            <div class="gallery__grid">
+              <a class="gallery__item gallery__item--tall" href="#collections" data-caption="The Night Reserve Showcase">
+                <img src="assets/img/gallery-1.jpg" alt="Night collection perfumes" loading="lazy" />
+              </a>
+              <a class="gallery__item" href="#collections" data-caption="Boadicea The Dragon">
+                <img src="assets/img/gallery-2.jpg" alt="Boadicea The Victorious Dragon" loading="lazy" />
+              </a>
+              <a class="gallery__item" href="#collections" data-caption="Dior Ambre Nuit Esprit">
+                <img src="assets/img/gallery-3.jpg" alt="Christian Dior Ambre Nuit Esprit" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="social__right">
+          <article class="pin reveal" id="noir">
+            <div class="pin__media">
+              <img class="pin__bg" src="assets/img/opera.jpg" alt="" loading="lazy" />
+              <div class="pin__body">
+                <img class="pin__avatar" src="assets/img/haltane.jpg" alt="Parfums De Marly Haltane" loading="lazy" />
+                <h3 class="pin__name">Parfums De Marly</h3>
+                <p class="pin__sub">Haltane EDP · The Noble Reserve</p>
+                <p class="pin__handle"><span class="bmark" aria-hidden="true"><img src="assets/img/bolix-mark.png" alt="" /></span>bolix.vault · rare batch</p>
+                <p class="pin__stats"><b>Agarwood &amp; Saffron</b> · <b>100%</b> Authentic</p>
+                <button class="pin__cta" type="button" data-add="haltane">Add to bag · ₦529,999</button>
+              </div>
+            </div>
+          </article>
+
+          <div class="notes reveal" id="notes">
+            <p class="notes__kicker">The pyramid of</p>
+            <h3 class="notes__title">Ex Nihilo Blue Talisman</h3>
+            <ul class="notes__list">
+              <li class="note-pill">
+                <img src="assets/img/ing-saffron.jpg" alt="" loading="lazy" />
+                <span><strong>Top · Pear &amp; Italian Bergamot</strong><small>Sparkling citrus, succulent radiant fruit</small></span>
+              </li>
+              <li class="note-pill">
+                <img src="assets/img/ing-rose.jpg" alt="" loading="lazy" />
+                <span><strong>Heart · Orange Blossom &amp; Jasmine Sambac</strong><small>Luminous white petals, rich floral depth</small></span>
+              </li>
+              <li class="note-pill">
+                <img src="assets/img/ing-oud.jpg" alt="" loading="lazy" />
+                <span><strong>Base · Amberwood, Ambrofix™ &amp; Sandalwood</strong><small>Warm amber, velvety cedar, vanilla &amp; musk</small></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COLLECTIONS ============ -->
+      <section class="collection" id="collections" aria-labelledby="collections-title">
+        <div class="filter-bar reveal">
+          <span class="filter-bar__home" aria-hidden="true"><svg class="ic"><use href="#i-bag" /></svg></span>
+          <div class="filter-bar__title">
+            <h2 id="collections-title">The Curation</h2>
+            <span data-result-count>12 fragrances</span>
+          </div>
+          <div class="chips" role="group" aria-label="Filter by family">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="amber" aria-pressed="false">Amber</button>
+            <button class="chip" type="button" data-filter="woody" aria-pressed="false">Woody</button>
+            <button class="chip" type="button" data-filter="floral" aria-pressed="false">Floral</button>
+            <button class="chip" type="button" data-filter="fresh" aria-pressed="false">Fresh</button>
+          </div>
+          <button class="filter-bar__search" type="button" data-open-search aria-label="Search fragrances"><svg class="ic"><use href="#i-search" /></svg></button>
+        </div>
+
+        <div class="products">
+          <!-- 1. Ex Nihilo Blue Talisman -->
+          <article class="product product--beige reveal" data-id="blue-talisman" data-name="Ex Nihilo Blue Talisman" data-type="Extrait de Parfum" data-price="858999" data-family="fresh floral" data-notes="Pear · Italian Bergamot · Orange Blossom · Ambrofix™" data-size="100 ml">
+            <div class="product__media">
+              <img src="assets/img/blue-talisman.jpg" alt="Ex Nihilo Blue Talisman Extrait De Parfum 100ml" loading="lazy" />
+              <span class="product__tag">Signature</span>
+              <div class="product__pill">
+                <span><strong>Ex Nihilo Blue Talisman</strong><small>Extrait de Parfum · 100 ml</small></span>
+                <button class="product__add" type="button" data-add="blue-talisman" aria-label="Add Ex Nihilo Blue Talisman to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Pear · Orange Blossom · Ambrofix™</span><b>₦858,999</b></p>
+          </article>
+
+          <!-- 2. Boadicea The Victorious Dragon -->
+          <article class="product product--wine reveal" data-id="boadicea-dragon" data-name="Boadicea The Victorious Dragon" data-type="Luxury Extrait" data-price="1899999" data-family="amber woody" data-notes="Magnolia · Saffron · Incense · Aged Oud" data-size="100 ml">
+            <div class="product__media">
+              <img src="assets/img/boadicea-dragon.jpg" alt="Boadicea The Victorious Dragon Luxury Perfume 100ml" loading="lazy" />
+              <span class="product__tag">Imperial</span>
+              <div class="product__pill">
+                <span><strong>Boadicea The Dragon</strong><small>Luxury Extrait · 100 ml</small></span>
+                <button class="product__add" type="button" data-add="boadicea-dragon" aria-label="Add Boadicea The Victorious Dragon to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Magnolia · Saffron · Incense · Oud</span><b>₦1,899,999</b></p>
+          </article>
+
+          <!-- 3. Christian Dior Ambre Nuit Esprit -->
+          <article class="product product--beige reveal" data-id="dior-ambre-nuit" data-name="Dior Ambre Nuit Esprit de Parfum" data-type="Esprit de Parfum" data-price="1147999" data-family="amber floral" data-notes="Turkish Rose · Dark Amber · Smoky Cedar" data-size="80 ml">
+            <div class="product__media">
+              <img src="assets/img/dior-ambre-nuit.jpg" alt="Christian Dior Ambre Nuit Esprit De Parfum 80ml" loading="lazy" />
+              <span class="product__tag">Esprit</span>
+              <div class="product__pill">
+                <span><strong>Dior Ambre Nuit</strong><small>Esprit de Parfum · 80 ml</small></span>
+                <button class="product__add" type="button" data-add="dior-ambre-nuit" aria-label="Add Christian Dior Ambre Nuit to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Turkish Rose · Dark Amber · Cedar</span><b>₦1,147,999</b></p>
+          </article>
+
+          <!-- 4. Parfums De Marly Haltane -->
+          <article class="product product--wine reveal" data-id="haltane" data-name="Parfums De Marly Haltane" data-type="Eau de Parfum" data-price="529999" data-family="woody amber" data-notes="Clary Sage · Saffron · Praline · Agarwood" data-size="125 ml">
+            <div class="product__media">
+              <img src="assets/img/haltane.jpg" alt="Parfums De Marly Haltane EDP 125ml" loading="lazy" />
+              <span class="product__tag">Night</span>
+              <div class="product__pill">
+                <span><strong>PDM Haltane</strong><small>Eau de Parfum · 125 ml</small></span>
+                <button class="product__add" type="button" data-add="haltane" aria-label="Add Parfums De Marly Haltane to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Clary Sage · Saffron · Praline · Oud</span><b>₦529,999</b></p>
+          </article>
+
+          <!-- 5. Frederic Malle Promise -->
+          <article class="product product--beige reveal" data-id="promise-malle" data-name="Frederic Malle Promise" data-type="Eau de Parfum" data-price="522999" data-family="woody floral" data-notes="Apple Accord · Bulgarian Rose · Cypriol" data-size="50 ml">
+            <div class="product__media">
+              <img src="assets/img/promise-malle.jpg" alt="Frederic Malle Promise By Dominique Ropion EDP 50ml" loading="lazy" />
+              <span class="product__tag">Masterpiece</span>
+              <div class="product__pill">
+                <span><strong>Frederic Malle Promise</strong><small>Dominique Ropion · 50 ml</small></span>
+                <button class="product__add" type="button" data-add="promise-malle" aria-label="Add Frederic Malle Promise to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Apple · Bulgarian Rose · Cypriol</span><b>₦522,999</b></p>
+          </article>
+
+          <!-- 6. D'Orsay Tonka Hysteria -->
+          <article class="product product--wine reveal" data-id="tonka-hysteria" data-name="D'Orsay Tonka Hysteria" data-type="Extrait de Parfum" data-price="539999" data-family="amber woody" data-notes="Mandarin · Iris Pallida · Tonka Bean" data-size="90 ml">
+            <div class="product__media">
+              <img src="assets/img/tonka-hysteria.jpg" alt="D'Orsay Tonka Hysteria Extrait De Parfum 90ml" loading="lazy" />
+              <span class="product__tag">Extrait</span>
+              <div class="product__pill">
+                <span><strong>D'Orsay Tonka Hysteria</strong><small>Extrait de Parfum · 90 ml</small></span>
+                <button class="product__add" type="button" data-add="tonka-hysteria" aria-label="Add D'Orsay Tonka Hysteria to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Mandarin · Iris Pallida · Tonka Bean</span><b>₦539,999</b></p>
+          </article>
+
+          <!-- 7. Creed Queen Of Silk -->
+          <article class="product product--beige reveal" data-id="queen-of-silk" data-name="Creed Queen Of Silk" data-type="Eau de Parfum" data-price="594999" data-family="floral amber" data-notes="Osmanthus · Tuberose · Passion Fruit · Patchouli" data-size="75 ml">
+            <div class="product__media">
+              <img src="assets/img/queen-of-silk.jpg" alt="Creed Queen Of Silk EDP 75ml Perfume" loading="lazy" />
+              <span class="product__tag">Royal</span>
+              <div class="product__pill">
+                <span><strong>Creed Queen Of Silk</strong><small>Eau de Parfum · 75 ml</small></span>
+                <button class="product__add" type="button" data-add="queen-of-silk" aria-label="Add Creed Queen Of Silk to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Osmanthus · Tuberose · Patchouli</span><b>₦594,999</b></p>
+          </article>
+
+          <!-- 8. Creed Wind Flowers -->
+          <article class="product product--wine reveal" data-id="wind-flowers" data-name="Creed Wind Flowers" data-type="Eau de Parfum" data-price="534999" data-family="floral fresh" data-notes="Bergamot · Peach · Jasmine · Sandalwood" data-size="75 ml">
+            <div class="product__media">
+              <img src="assets/img/wind-flowers.jpg" alt="Creed Wind Flowers EDP 75ml" loading="lazy" />
+              <span class="product__tag">Bestseller</span>
+              <div class="product__pill">
+                <span><strong>Creed Wind Flowers</strong><small>Eau de Parfum · 75 ml</small></span>
+                <button class="product__add" type="button" data-add="wind-flowers" aria-label="Add Creed Wind Flowers to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Peach · Jasmine · Tuberose · Praline</span><b>₦534,999</b></p>
+          </article>
+
+          <!-- 9. Matiere Premiere Vanilla Powder -->
+          <article class="product product--beige reveal" data-id="vanilla-powder" data-name="Matiere Premiere Vanilla Powder" data-type="Extrait de Parfum" data-price="624999" data-family="amber woody" data-notes="Madagascar Vanilla · Palo Santo · White Musk" data-size="100 ml">
+            <div class="product__media">
+              <img src="assets/img/vanilla-powder.jpg" alt="Matiere Premier Vanilla Powder Extrait De Parfum 100ml" loading="lazy" />
+              <span class="product__tag">Extrait</span>
+              <div class="product__pill">
+                <span><strong>Matiere Premiere Vanilla</strong><small>Extrait de Parfum · 100 ml</small></span>
+                <button class="product__add" type="button" data-add="vanilla-powder" aria-label="Add Matiere Premiere Vanilla Powder to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Vanilla Absolute · Palo Santo · Musk</span><b>₦624,999</b></p>
+          </article>
+
+          <!-- 10. Amouage Love Delight -->
+          <article class="product product--wine reveal" data-id="love-delight" data-name="Amouage Love Delight" data-type="Eau de Parfum" data-price="569999" data-family="floral fresh" data-notes="Ginger · Mandarin · Rose Water · Rum Absolute" data-size="100 ml">
+            <div class="product__media">
+              <img src="assets/img/love-delight.jpg" alt="Amouage Love Delight EDP 100ml" loading="lazy" />
+              <span class="product__tag">Prestige</span>
+              <div class="product__pill">
+                <span><strong>Amouage Love Delight</strong><small>Eau de Parfum · 100 ml</small></span>
+                <button class="product__add" type="button" data-add="love-delight" aria-label="Add Amouage Love Delight to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Ginger · Rose Water · Rum Absolute</span><b>₦569,999</b></p>
+          </article>
+
+          <!-- 11. Christian Dior Sauvage Parfum -->
+          <article class="product product--beige reveal" data-id="dior-sauvage" data-name="Christian Dior Sauvage Parfum" data-type="Parfum Concentré" data-price="354999" data-family="fresh woody" data-notes="Bergamot · Spicy Mandarin · Sri Lankan Sandalwood" data-size="100 ml">
+            <div class="product__media">
+              <img src="assets/img/dior-sauvage.jpg" alt="Christian Dior Sauvage Parfum 100ml" loading="lazy" />
+              <span class="product__tag">Iconic</span>
+              <div class="product__pill">
+                <span><strong>Dior Sauvage Parfum</strong><small>Parfum Concentré · 100 ml</small></span>
+                <button class="product__add" type="button" data-add="dior-sauvage" aria-label="Add Dior Sauvage to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Bergamot · Mandarin · Sandalwood</span><b>₦354,999</b></p>
+          </article>
+
+          <!-- 12. Mykonos California Signature -->
+          <article class="product product--wine reveal" data-id="california-sig" data-name="Mykonos California Signature" data-type="Extrait de Parfum" data-price="74999" data-family="fresh woody" data-notes="Mandarin · Aquatic Accords · Teak Wood" data-size="50 ml">
+            <div class="product__media">
+              <img src="assets/img/california-sig.jpg" alt="Mykonos California Signature Extrait De Parfum 50ml" loading="lazy" />
+              <span class="product__tag">Riviera</span>
+              <div class="product__pill">
+                <span><strong>Mykonos California</strong><small>Extrait de Parfum · 50 ml</small></span>
+                <button class="product__add" type="button" data-add="california-sig" aria-label="Add Mykonos California Signature to bag"><svg class="ic"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+            <p class="product__foot"><span>Mandarin · Aquatic Notes · Teak Wood</span><b>₦74,999</b></p>
+          </article>
+        </div>
+        <p class="products__empty" hidden>No fragrances in this family yet.</p>
+      </section>
+
+      <!-- ============ ATELIER / SCENT FINDER ============ -->
+      <section class="atelier" id="atelier" aria-labelledby="atelier-title">
+        <div class="feature__card atelier__card reveal">
+          <div class="panel quiz" data-quiz>
+            <h2 class="panel__title" id="atelier-title">Find your signature</h2>
+            <p class="panel__meta"><b>3</b> questions · 30 seconds</p>
+            <div class="quiz__stage" aria-live="polite">
+              <p class="quiz__step" data-quiz-step>Question 1 of 3</p>
+              <p class="quiz__question" data-quiz-question>When will you wear it?</p>
+              <div class="quiz__options" data-quiz-options></div>
+            </div>
+            <div class="quiz__result" data-quiz-result hidden>
+              <p class="quiz__step">Your signature match is</p>
+              <div class="quiz__match">
+                <img data-quiz-img src="assets/img/blue-talisman.jpg" alt="" />
+                <span><strong data-quiz-name>Ex Nihilo Blue Talisman</strong><small data-quiz-notes>Pear · Italian Bergamot · Orange Blossom · Ambrofix™</small></span>
+              </div>
+            </div>
+            <ol class="quiz__dots" aria-hidden="true"><li></li><li></li><li></li></ol>
+          </div>
+          <div class="actions">
+            <button class="btn-light" type="button" data-quiz-back disabled>Back</button>
+            <button class="btn-light" type="button" data-quiz-next disabled>Next</button>
+            <button class="btn-light btn-light--icon" type="button" data-quiz-reset aria-label="Start over"><svg class="ic"><use href="#i-reset" /></svg></button>
+          </div>
+        </div>
+
+        <figure class="frame frame--beige atelier__photo reveal">
+          <img src="assets/img/atelier.jpg" alt="Artisan perfumer organ with rare essences and formulas" loading="lazy" />
+          <figcaption class="hero__pill atelier__pill">
+            <img src="assets/img/ing-oud.jpg" alt="" loading="lazy" />
+            <span><strong>The Atelier</strong><small>Bespoke consultations from ₦1,200,000</small></span>
+            <button class="atelier__book" type="button" data-book>Book</button>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ JOURNAL ============ -->
+      <section class="journal" id="journal" aria-labelledby="journal-title">
+        <h2 class="visually-hidden" id="journal-title">Journal</h2>
+        <div class="journal__pins">
+          <article class="pin pin--story reveal">
+            <button class="pin__media" type="button" data-article="rose">
+              <img class="pin__bg" src="assets/img/journal-rose.jpg" alt="" loading="lazy" />
+              <span class="pin__body">
+                <span class="pin__kicker">Journal · 6 min read</span>
+                <span class="pin__name">The Rose Harvest at Dawn</span>
+                <span class="pin__handle"><span class="bmark" aria-hidden="true"><img src="assets/img/bolix-mark.png" alt="" /></span>bolix.journal · rose season</span>
+                <span class="pin__stats">Read the story</span>
+              </span>
+            </button>
+          </article>
+          <article class="pin pin--story reveal">
+            <button class="pin__media" type="button" data-article="opera">
+              <img class="pin__bg" src="assets/img/journal-opera.jpg" alt="" loading="lazy" />
+              <span class="pin__body">
+                <span class="pin__kicker">Journal · 4 min read</span>
+                <span class="pin__name">Notes from the Opera Box</span>
+                <span class="pin__handle"><span class="bmark" aria-hidden="true"><img src="assets/img/bolix-mark.png" alt="" /></span>bolix.journal · the nose</span>
+                <span class="pin__stats">Read the story</span>
+              </span>
+            </button>
+          </article>
+        </div>
+
+        <ul class="reviews">
+          <li class="profile profile--review reveal">
+            <span class="profile__avatar profile__avatar--mono" aria-hidden="true">C</span>
+            <p class="profile__handle">@clementine.rv</p>
+            <blockquote>“Blue Talisman is the first fragrance strangers stop me to ask about on the street. It wears like a luminous, hypnotic jewel against the skin.”</blockquote>
+            <ul class="profile__stats">
+              <li><b>5.0</b><span>Rating</span></li>
+              <li><b>3 yrs</b><span>Client</span></li>
+              <li><b>4</b><span>Bottles</span></li>
+            </ul>
+          </li>
+          <li class="profile profile--review reveal">
+            <span class="profile__avatar profile__avatar--mono" aria-hidden="true">A</span>
+            <p class="profile__handle">@aurelien.m</p>
+            <blockquote>“Haltane lasts through dinner, the evening stroll and well into next morning. Dark, woody, aristocratically smooth and commanding.”</blockquote>
+            <ul class="profile__stats">
+              <li><b>5.0</b><span>Rating</span></li>
+              <li><b>1 yr</b><span>Client</span></li>
+              <li><b>2</b><span>Bottles</span></li>
+            </ul>
+          </li>
+          <li class="profile profile--review reveal">
+            <span class="profile__avatar profile__avatar--mono" aria-hidden="true">S</span>
+            <p class="profile__handle">@sofia.lune</p>
+            <blockquote>“My bespoke consultation at the Atelier was pure wonder. The depth of knowledge and rare ingredients created a scent that feels like my own handwriting.”</blockquote>
+            <ul class="profile__stats">
+              <li><b>4.9</b><span>Rating</span></li>
+              <li><b>5 yrs</b><span>Client</span></li>
+              <li><b>9</b><span>Bottles</span></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__card reveal">
+        <div class="hero__story footer__story">
+          <img class="footer__logo-img" src="assets/img/bolix-logo.png" alt="Bolix Perfume" />
+          <h2>Letters from the Maison</h2>
+          <p>Once a month we share private notes on rare harvests, new extrait arrivals, and private olfactory evenings. Pure discernment — only the exceptional.</p>
+          <form class="newsletter" novalidate>
+            <label class="visually-hidden" for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <ul class="circles circles--footer" aria-label="From the boutique">
+          <li><a href="#collections" data-tip="Queen Of Silk"><img src="assets/img/queen-of-silk.jpg" alt="Creed Queen Of Silk" loading="lazy" /></a></li>
+          <li><a href="#collections" data-tip="Blue Talisman"><img src="assets/img/blue-talisman.jpg" alt="Ex Nihilo Blue Talisman" loading="lazy" /></a></li>
+          <li><a href="#collections" data-tip="The Dragon"><img src="assets/img/boadicea-dragon.jpg" alt="Boadicea The Dragon" loading="lazy" /></a></li>
+        </ul>
+      </div>
+
+      <div class="nav nav--footer">
+        <a class="nav__brand" href="#maison" aria-label="Bolix Perfume — Home">
+          <img class="nav__logo-img" src="assets/img/bolix-logo.png" alt="Bolix Perfume" />
+        </a>
+        <div class="nav__links">
+          <a class="nav__link" href="shop.html" target="_blank" rel="noopener"><strong>Boutique</strong><span>fragrances.com.ng</span></a>
+          <span class="nav__link"><strong>Concierge</strong><span>Mon–Sat · 9h–20h</span></span>
+          <a class="nav__link" href="mailto:hello@bolixperfumery.com"><strong>Contact</strong><span>hello@bolix.com</span></a>
+          <a class="nav__link" href="#community"><strong>@bolixperfumery</strong><span>Instagram</span></a>
+        </div>
+        <a class="nav__search" href="#maison" data-to-top aria-label="Back to top"><svg class="ic"><use href="#i-up" /></svg></a>
+      </div>
+      <p class="footer__legal">© 2026 Bolix Perfumery · Maison de Haute Parfumerie · Authentic designer &amp; niche fragrances.</p>
+    </footer>
+  </div>
+
+  <!-- Floating bag -->
+  <button class="bag-fab" type="button" data-open-bag hidden>
+    <img data-fab-img src="assets/img/blue-talisman.jpg" alt="" />
+    <span><strong>Your bag</strong><small data-fab-summary>1 item · ₦858,999</small></span>
+    <svg class="ic"><use href="#i-bag" /></svg>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" role="status" aria-live="polite" hidden>
+    <img data-toast-img alt="" />
+    <span><strong data-toast-title></strong><small data-toast-text></small></span>
+    <button type="button" data-toast-action data-open-bag hidden>View bag</button>
+  </div>
+
+  <!-- Search -->
+  <dialog class="sheet search" id="search" aria-label="Search fragrances">
+    <div class="sheet__card">
+      <form class="mini-nav search__bar" method="dialog">
+        <button class="mini-nav__home" type="submit" aria-label="Close search"><svg class="ic"><use href="#i-close" /></svg></button>
+        <label class="visually-hidden" for="search-input">Search fragrances</label>
+        <input id="search-input" type="search" placeholder="Search a scent, brand, note or family…" autocomplete="off" />
+        <span class="mini-nav__search" aria-hidden="true"><svg class="ic"><use href="#i-search" /></svg></span>
+      </form>
+      <ul class="search__results" data-search-results></ul>
+    </div>
+  </dialog>
+
+  <!-- Bag -->
+  <dialog class="drawer" id="bag" aria-labelledby="bag-title">
+    <div class="drawer__inner">
+      <div class="panel drawer__panel">
+        <div class="drawer__head">
+          <h2 class="panel__title" id="bag-title">Your bag</h2>
+          <form method="dialog"><button class="icon-btn" type="submit" aria-label="Close bag"><svg class="ic"><use href="#i-close" /></svg></button></form>
+        </div>
+        <p class="panel__meta" data-bag-meta><b>0</b> items</p>
+        <ul class="drawer__list" data-bag-list></ul>
+        <p class="drawer__empty" data-bag-empty>Your bag is waiting for its first bottle.</p>
+        <dl class="drawer__totals">
+          <div><dt>Subtotal</dt><dd data-bag-subtotal>₦0</dd></div>
+          <div><dt>Gift wrapping</dt><dd data-bag-gift>—</dd></div>
+          <div><dt>Delivery</dt><dd>Complimentary Worldwide</dd></div>
+        </dl>
+      </div>
+      <div class="actions drawer__actions">
+        <button class="btn-light" type="button" data-checkout>Checkout</button>
+        <form method="dialog"><button class="btn-light" type="submit">Keep browsing</button></form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Article -->
+  <dialog class="sheet article" id="article" aria-labelledby="article-title">
+    <div class="sheet__card">
+      <div class="mini-nav">
+        <form method="dialog"><button class="mini-nav__home" type="submit" aria-label="Close story"><svg class="ic"><use href="#i-close" /></svg></button></form>
+        <span class="mini-nav__title">Bolix Journal</span>
+      </div>
+      <img class="article__img" data-article-img alt="" />
+      <div class="hero__story article__body">
+        <h2 id="article-title" data-article-title></h2>
+        <div data-article-text></div>
+      </div>
+    </div>
+  </dialog>
+
+  <template id="article-rose">
+    <p>Before sunrise in the Valley of Roses, pickers move between the rows while the petals are still heavy with crystal dew. By nine o’clock the morning sun begins to evaporate the delicate volatile oils — so every harvest is a poetic race against time.</p>
+    <p>It takes roughly three thousand kilograms of hand-picked petals to distill a single kilo of pure rose essence. We source from legendary multi-generational grower families whose craft preserves the velvety, honeyed character of the flower.</p>
+    <p>That noble rose essence anchors Frederic Malle Promise and Christian Dior Ambre Nuit: crisp and fresh at dawn, deepening into rich, wine-like warmth as it melts onto the skin.</p>
+  </template>
+  <template id="article-opera">
+    <p>Haute perfumery shares an intimate soul with the grand opera: the quiet anticipation as the curtain rises, the rush of sensory emotion, and the resonant chords that echo long after the final ovation.</p>
+    <p>Master perfumers compose like orchestrators — bright citrus top notes act like soaring violins, lush florals form the harmonious heart, while smoky oud, amberwood, and vanilla provide the deep, resonant bass notes holding the symphony together.</p>
+    <p>Every bottle in the Bolix collection is an invitation to experience this artistry: crafted by master noses including Jordi Fernández and Dominique Ropion to capture unforgettable moments in time.</p>
+  </template>
+
+  <script src="script.js"></script><script src="home-commerce.js"></script>
+</body>
+</html>
